@@ -14,5 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    // ARRAY - I METODO
+    $data = [
+        'content'   => 'Lorem Ipsum dolor...',
+        'name'      => 'Stefano',
+        'surname'   => 'Cardillo'
+    ];
+
+    //INVIO ARRAY - I METODO    
+    return view('home', $data);
+    
+});
+
+Route::get('/about-us', function () {
+
+    //CONTENT - II METODO
+    $content = 'Lorem ipsum dolor sit...';
+    $address = 'Via Risorgimento 420, Napoli (NA)';
+    $story = 'Lorem ipsum asoioiadnvio nsadvoi nsadoivnaso dnvaosdn voafvoia ndovnasdv na';
+    
+    //INVIO CONTENT - II METODO
+    return view('about_us', compact('content', 'address', 'story'));
+
 });
